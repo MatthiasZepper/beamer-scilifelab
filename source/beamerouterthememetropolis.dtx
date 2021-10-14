@@ -12,7 +12,7 @@
 % \iffalse
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{beamerouterthememetropolis}[2017/01/23 Metropolis outer theme]
+\ProvidesPackage{beamerouterthemescilifelab}[2017/01/23 scilifelab outer theme]
 %</package>
 % \fi
 % \CheckSum{0}
@@ -44,7 +44,7 @@
 %    Adds slide numbers to the bottom right of each slide.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/outer/numbering/.cd,
+  /scilifelab/outer/numbering/.cd,
     .is choice,
     none/.code=\setbeamertemplate{frame numbering}[none],
     counter/.code=\setbeamertemplate{frame numbering}[counter],
@@ -57,24 +57,24 @@
 %    Adds a progress bar to the top, bottom, or frametitle of each slide.
 %    \begin{macrocode}
 \pgfkeys{
-  /metropolis/outer/progressbar/.cd,
+  /scilifelab/outer/progressbar/.cd,
     .is choice,
     none/.code={%
       \setbeamertemplate{headline}[plain]
       \setbeamertemplate{frametitle}[plain]
       \setbeamertemplate{footline}[plain]
     },
-    head/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    head/.code={\pgfkeys{/scilifelab/outer/progressbar=none}
       \addtobeamertemplate{headline}{}{%
         \usebeamertemplate*{progress bar in head/foot}
       }
     },
-    frametitle/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    frametitle/.code={\pgfkeys{/scilifelab/outer/progressbar=none}
       \addtobeamertemplate{frametitle}{}{%
         \usebeamertemplate*{progress bar in head/foot}
       }
     },
-    foot/.code={\pgfkeys{/metropolis/outer/progressbar=none}
+    foot/.code={\pgfkeys{/scilifelab/outer/progressbar=none}
       \addtobeamertemplate{footline}{}{%
         \usebeamertemplate*{progress bar in head/foot}%
       }
@@ -83,11 +83,11 @@
 %    \end{macrocode}
 % \end{macro}
 %
-% \begin{macro}{\metropolis@outer@setdefaults}
+% \begin{macro}{\scilifelab@outer@setdefaults}
 %    Sets default values for outer theme options.
 %    \begin{macrocode}
-\newcommand{\metropolis@outer@setdefaults}{
-  \pgfkeys{/metropolis/outer/.cd,
+\newcommand{\scilifelab@outer@setdefaults}{
+  \pgfkeys{/scilifelab/outer/.cd,
     numbering=counter,
     progressbar=none,
   }
@@ -148,30 +148,30 @@
 %    Templates for the frame title, which is optionally underlined with a
 %    progress bar.
 %    \begin{macrocode}
-\newlength{\metropolis@frametitle@padding}
-\setlength{\metropolis@frametitle@padding}{2.2ex}
-\newcommand{\metropolis@frametitlestrut@start}{
-  \rule{0pt}{\metropolis@frametitle@padding +%
+\newlength{\scilifelab@frametitle@padding}
+\setlength{\scilifelab@frametitle@padding}{2.2ex}
+\newcommand{\scilifelab@frametitlestrut@start}{
+  \rule{0pt}{\scilifelab@frametitle@padding +%
     \totalheightof{%
-      \ifcsdef{metropolis@frametitleformat}{\metropolis@frametitleformat X}{X}%
+      \ifcsdef{scilifelab@frametitleformat}{\scilifelab@frametitleformat X}{X}%
     }%
   }%
 }
-\newcommand{\metropolis@frametitlestrut@end}{
-  \rule[-\metropolis@frametitle@padding]{0pt}{\metropolis@frametitle@padding}
+\newcommand{\scilifelab@frametitlestrut@end}{
+  \rule[-\scilifelab@frametitle@padding]{0pt}{\scilifelab@frametitle@padding}
 }
 \defbeamertemplate{frametitle}{plain}{%
   \nointerlineskip%
   \begin{beamercolorbox}[%
       wd=\paperwidth,%
       sep=0pt,%
-      leftskip=\metropolis@frametitle@padding,%
-      rightskip=\metropolis@frametitle@padding,%
+      leftskip=\scilifelab@frametitle@padding,%
+      rightskip=\scilifelab@frametitle@padding,%
     ]{frametitle}%
-  \metropolis@frametitlestrut@start%
+  \scilifelab@frametitlestrut@start%
   \insertframetitle%
   \nolinebreak%
-  \metropolis@frametitlestrut@end%
+  \scilifelab@frametitlestrut@end%
   \end{beamercolorbox}%
 }
 \setbeamertemplate{frametitle continuation}{%
@@ -186,19 +186,19 @@
 %    on each page. Much of this code is duplicated in the inner theme's
 %    template |progress bar in section page|.
 %    \begin{macrocode}
-\newlength{\metropolis@progressinheadfoot}
-\newlength{\metropolis@progressinheadfoot@linewidth}
-\setlength{\metropolis@progressinheadfoot@linewidth}{0.4pt}
+\newlength{\scilifelab@progressinheadfoot}
+\newlength{\scilifelab@progressinheadfoot@linewidth}
+\setlength{\scilifelab@progressinheadfoot@linewidth}{0.4pt}
 \setbeamertemplate{progress bar in head/foot}{
   \nointerlineskip
-  \setlength{\metropolis@progressinheadfoot}{%
+  \setlength{\scilifelab@progressinheadfoot}{%
     \paperwidth * \ratio{\insertframenumber pt}{\inserttotalframenumber pt}%
   }%
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
     \tikzexternaldisable%
     \begin{tikzpicture}
-      \fill[bg] (0,0) rectangle (\paperwidth, \metropolis@progressinheadfoot@linewidth);
-      \fill[fg] (0,0) rectangle (\metropolis@progressinheadfoot, \metropolis@progressinheadfoot@linewidth);
+      \fill[bg] (0,0) rectangle (\paperwidth, \scilifelab@progressinheadfoot@linewidth);
+      \fill[fg] (0,0) rectangle (\scilifelab@progressinheadfoot, \scilifelab@progressinheadfoot@linewidth);
     \end{tikzpicture}%
     \tikzexternalenable%
   \end{beamercolorbox}
@@ -217,7 +217,7 @@
 \AtBeginDocument{%
   \apptocmd{\appendix}{%
     \pgfkeys{%
-      /metropolis/outer/.cd,
+      /scilifelab/outer/.cd,
       numbering=none,
       progressbar=none}
     }{}{}
@@ -227,8 +227,8 @@
 % \subsubsection{Process package options}
 %
 %    \begin{macrocode}
-\metropolis@outer@setdefaults
-\ProcessPgfPackageOptions{/metropolis/outer}
+\scilifelab@outer@setdefaults
+\ProcessPgfPackageOptions{/scilifelab/outer}
 %    \end{macrocode}
 %
 % \iffalse
