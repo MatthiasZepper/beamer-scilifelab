@@ -1,8 +1,11 @@
 ## SciLifeLab Beamer Theme
 
-*Latex Beamer* Theme derived from [Metropolis](https://github.com/matze/mtheme) by
+A Latex Beamer theme derived from [Metropolis](https://github.com/matze/mtheme) by
 Matthias Vogelsang and others and released under a [Creative Commons Attribution-ShareAlike
 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+It uses the Linux Biolinum Font Family designed by Philipp H. Poll for better readability.
+The official sans-serif font specified by [SciLifeLabs visual guide](https://www.scilifelab.se/community-pages/resources/visual-identity/) is Lato designed by Łukasz Dziedzic. To use open `source/beamerfontthemescilifelab.dtx` and replace `\usepackage{biolinum}` with `\usepackage{lato}` in line 50.
 
 ## Installation
 
