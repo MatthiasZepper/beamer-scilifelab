@@ -112,11 +112,28 @@
     bg=black!2
   }
 }
+
+\setbeamercolor{progress bar}{%
+  fg=scLime,
+  bg=scTeal
+}
+
 \setbeamercolor{alerted text}{%
-  fg=scGrape
+  fg=scLime,
+  bg=scTeal
 }
 \setbeamercolor{example text}{%
-  fg=scAqua
+  fg=scAqua,
+  bg=scGrape
+}
+
+\setbeamercolor{alerted block}{%
+  fg=scLime,
+  bg=scTeal
+}
+\setbeamercolor{example block}{%
+  fg=scAqua,
+  bg=scGrape
 }
 %    \end{macrocode}
 %
@@ -161,11 +178,7 @@
 % with |title separator|.
 %
 %    \begin{macrocode}
-\setbeamercolor{progress bar}{%
-  use=alerted text,
-  fg=alerted text.fg,
-  bg=alerted text.fg!50!black!30
-}
+
 \setbeamercolor{title separator}{
   use=progress bar,
   parent=progress bar
