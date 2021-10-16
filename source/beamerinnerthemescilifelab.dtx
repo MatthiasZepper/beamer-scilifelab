@@ -201,7 +201,7 @@
 \setbeamertemplate{title separator}{
   \tikzexternaldisable%
   \begin{tikzpicture}
-    \fill[fg] (0,0) rectangle (\textwidth, \scilifelab@titleseparator@linewidth);
+    \fill[fg] (0,0) rectangle (\textwidth, 3*\scilifelab@titleseparator@linewidth);
   \end{tikzpicture}%
   \tikzexternalenable%
   \par%
@@ -340,8 +340,8 @@
   }%
   \tikzexternaldisable%
   \begin{tikzpicture}
-    \fill[bg] (0,0) rectangle (\textwidth, \scilifelab@progressonsectionpage@linewidth);
-    \fill[fg] (0,0) rectangle (\scilifelab@progressonsectionpage, \scilifelab@progressonsectionpage@linewidth);
+    \fill[bg] (0,0) rectangle (\textwidth, 3*\scilifelab@progressonsectionpage@linewidth);
+    \fill[fg] (0,0) rectangle (\scilifelab@progressonsectionpage, 3*\scilifelab@progressonsectionpage@linewidth);
   \end{tikzpicture}%
   \tikzexternalenable%
 }

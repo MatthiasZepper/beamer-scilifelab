@@ -197,8 +197,8 @@
   \begin{beamercolorbox}[wd=\paperwidth]{progress bar in head/foot}
     \tikzexternaldisable%
     \begin{tikzpicture}
-      \fill[bg] (0,0) rectangle (\paperwidth, \scilifelab@progressinheadfoot@linewidth);
-      \fill[fg] (0,0) rectangle (\scilifelab@progressinheadfoot, \scilifelab@progressinheadfoot@linewidth);
+      \fill[bg] (0,0) rectangle (\paperwidth, 2*\scilifelab@progressinheadfoot@linewidth);
+      \fill[fg] (0,0) rectangle (\scilifelab@progressinheadfoot, 2*\scilifelab@progressinheadfoot@linewidth);
     \end{tikzpicture}%
     \tikzexternalenable%
   \end{beamercolorbox}

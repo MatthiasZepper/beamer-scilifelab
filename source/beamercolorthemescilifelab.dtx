@@ -115,25 +115,27 @@
 
 \setbeamercolor{progress bar}{%
   fg=scLime,
-  bg=scTeal
+  bg=scGrape
 }
 
 \setbeamercolor{alerted text}{%
-  fg=scLime,
-  bg=scTeal
+  fg=scLime
 }
 \setbeamercolor{example text}{%
-  fg=scAqua,
-  bg=scGrape
+  fg=scTeal
 }
 
+\setbeamercolor{default block}{%
+  fg=scLime!75!black,
+  bg=scLime
+}
 \setbeamercolor{alerted block}{%
-  fg=scLime,
-  bg=scTeal
+  fg=scGrape!75!white,
+  bg=scGrape
 }
 \setbeamercolor{example block}{%
   fg=scAqua,
-  bg=scGrape
+  bg=scTeal
 }
 %    \end{macrocode}
 %
@@ -209,30 +211,55 @@
   \setbeamercolor{block body}{
     bg=
   }
-}
-\newcommand{\scilifelab@block@fill}{
-  \setbeamercolor{block title}{%
-    use=normal text,
-    fg=normal text.fg,
-    bg=normal text.bg!80!fg
-  }
-  \setbeamercolor{block body}{
-    use={block title, normal text},
-    bg=block title.bg!50!normal text.bg
-  }
-}
-\setbeamercolor{block title alerted}{%
-    use={block title, alerted text},
-    bg=block title.bg,
-    fg=alerted text.fg
+
+  \setbeamercolor{block title alerted}{%
+  use={block title, alerted text},
+  bg=block title.bg,
+  fg=alerted text.fg
 }
 \setbeamercolor{block title example}{%
-    use={block title, example text},
-    bg=block title.bg,
-    fg=example text.fg
+  use={block title, example text},
+  bg=block title.bg,
+  fg=example text.fg
 }
 \setbeamercolor{block body alerted}{use=block body, parent=block body}
 \setbeamercolor{block body example}{use=block body, parent=block body}
+}
+
+\newcommand{\scilifelab@block@fill}{
+  \setbeamercolor{block title}{%
+    use=default block,
+    fg=default block.fg,
+    bg=default block.bg
+  }
+  \setbeamercolor{block body}{
+    use={default block},
+    bg=default block.bg,
+    fg=black!2
+  }
+
+\setbeamercolor{block title alerted}{%
+    use={alerted block},
+    bg=alerted block.bg,
+    fg=alerted block.fg
+}
+\setbeamercolor{block body alerted}{%
+    use={alerted block},
+    bg=alerted block.bg,
+    fg=black!2
+}
+\setbeamercolor{block title example}{%
+    use={example block},
+    bg=example block.bg,
+    fg=example block.fg
+}
+\setbeamercolor{block body example}{%
+    use={example block},
+    bg=example block.bg,
+    fg=black!2
+}
+
+}
 %    \end{macrocode}
 %
 % Footnotes
